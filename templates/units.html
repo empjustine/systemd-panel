@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>systemd Units</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{server_address}}/static/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{server_address}}/static/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1" style="background:pink"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></div>
+        <div class="col-md-1" style="background:pink"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>
+        <div class="col-md-1" style="background:pink">03</div>
+        <div class="col-md-1" style="background:pink">04</div>
+        <div class="col-md-1" style="background:pink">05</div>
+        <div class="col-md-1" style="background:pink">06</div>
+        <div class="col-md-1" style="background:pink">07</div>
+        <div class="col-md-1" style="background:pink">08</div>
+        <div class="col-md-1" style="background:pink">09</div>
+        <div class="col-md-1" style="background:pink">10</div>
+        <div class="col-md-1" style="background:pink">11</div>
+        <div class="col-md-1" style="background:pink">12</div>
+      </div>
+      
+      <style>
+        table { table-layout:fixed; }
+        td { white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px; }
+      </style>
+      
+      <table class="table table-condensed table-hover">
+        <thead>
+            <th class="col-md-3"></th>
+            <th class="col-md-1"></th>
+            <th class="col-md-1">State</th>
+            <th class="col-md-1"></th>
+            <th class="col-md-6"></th>
+          <tr>
+            <th>Name</th>
+            <th>Load</th>
+            <th>Active</th>
+            <th>Sub</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tfoot></tfoot>
+        <tbody>{{#units}}
+          <tr>
+            <td>{{Name}}</td>
+            <td>{{LoadState}}</td>
+            <td>{{ActiveState}}</td>
+            <td>{{SubState}}</td>
+            <td>{{Description}}</td>
+          </tr>
+        {{/units}}</tbody>
+      </table>
+    </div><!-- /.container -->
+
+    <script src="{{server_address}}/static/bootstrap/3.3.1/js/jquery.1.11.1.min.js"></script>
+    <script src="{{server_address}}/static/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+
